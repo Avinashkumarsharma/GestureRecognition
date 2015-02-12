@@ -1,0 +1,412 @@
+@import url(http://fonts.googleapis.com/css?family=Titillium+Web:400,600,700,300);
+body{
+	background: #f8f8f8;
+	font-family: 'Titillium Web', sans-serif,Tahoma;
+	color:#190703;
+	-webkit-font-smoothing:antialiased;
+	line-height: 1em;
+	-webkit-text-stroke:0.35px;
+	overflow-x:hidden;
+	min-width:938px;
+	overflow-y:hidden;
+}
+h1{
+	font-size: 2em;
+}
+.clearfix{
+	clear:both;
+}
+.pull-left{
+	float:left;
+}
+.pull-right{
+	float:right;
+}
+
+header{
+	width:100%;
+	margin:0 auto;
+}
+header h1{
+	padding:0.3em 0.3em 0.3em 1.5em;
+	background:#FFFFFF;
+	color:#0a0a0a;
+	-webkit-box-shadow:0 0 2px #BBBBBB;
+	box-shadow: 0 0 2px #BBBBBB;
+	font-weight:400;
+	display: block;
+	font-size: 1.2em
+}
+#container{
+	width:100%;
+	margin:1em auto;
+}
+nav{
+	float:right;
+}
+nav ul li{
+	list-style: none;
+	display: inline-block;
+	margin:;
+}
+nav ul li p{
+	text-align: center;
+	padding-top:1em;
+}
+nav ul li>div{
+	display: inline-block;
+}
+nav ul{
+	display:inline-block;
+}
+.space{
+	margin-right:3em;
+}
+#menu{
+	background: #e1e1e1;
+	position: absolute;
+	width: 8%;
+	top:33%;
+	left:-8%;
+	border-right: 20px solid #e1e1e1;
+	height: 350px;
+	-webkit-transition:all 1s ease-in;
+	-moz-transition:all 1s ease-in;
+	-o-transition:all 1s ease-in;
+	transition:all 1s ease-in;
+}
+#content{
+	position: relative;
+	display: inline-block;
+	margin-top:4em;
+	left:0;
+	margin-left:1.5em;
+	font-size: 3em;
+	width: 90%;
+	-webkit-transition:all 1s ease-in;
+	-moz-transition:all 1s ease-in;
+	-o-transition:all 1s ease-in;
+	transition:all 1s ease-in;
+}
+#menu:hover{
+	left:0;
+}
+#menu:hover ~ #content{
+	left:10%;
+}
+#menu>img{
+	position:absolute;
+	top:0;
+	left:100%;
+}
+.braces{
+	position: relative;
+	margin-left:20%;
+	color:#e1e1e1;
+	font-size: 5em;
+	opacity: 0;
+}
+.text {
+	position: relative;
+	margin-top:-0.2em;
+	color: #2d1a1a;
+	font-size: 2.5em;
+	opacity: 0;
+}
+.text p{
+	padding-bottom:0.5em;
+}
+.smaller{
+	font-size: 0.25em;
+}
+.purple{
+	color: #816779;
+}
+#box{
+	position: relative;
+	margin-top:-3.5em;
+	z-index:5;
+	width:35%;
+	height: 320px;
+	opacity: 0;
+	background:url("img/pc.png") no-repeat left bottom;
+
+}
+#controls{
+	margin-left:1em;
+}
+#square {
+	position: absolute;
+	top:13%;
+	left: 9.014%;
+	width: 257px;
+	height:260px;
+}
+footer{
+	position: absolute;
+	bottom: 0px;
+	width:100%;
+	height: 163px;
+	min-height:163px;
+}
+.boat{
+	position: relative;
+	margin-top:-14em;
+	width: 400px;
+	z-index: -200;
+}
+.boat img{
+	width: 100%;
+	height: auto;
+}
+#pwrapper{
+	display: none;
+	margin-top:-4em;
+	width: 100%;
+	height:300px;
+	border: 1px solid green;
+}
+.placard{
+	position: absolute;
+	width: 100%;
+	background: #e9e995;
+	height: 40%;
+}
+.handle{
+	position: relative;
+	min-width:100px;
+	max-width: 150px;
+	min-height:220px;
+	background: url("img/handle.png") no-repeat bottom center;
+}
+.pcontainer{
+	width:100px;
+	position: absolute;
+	
+}
+#foot-back{
+	position: absolute;
+	bottom: 0px;
+	height:inherit;
+	width:inherit;
+	background:url("img/foot-back.png") repeat-x bottom center;
+}
+#foot-front{
+	position: absolute;
+	height: inherit;
+	width: inherit;
+	bottom: -10px;
+	background: url("img/foot-front.png") repeat-x bottom center;
+	opacity: 0.9;
+}
+#overlay{
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	width: 100%;
+	height: 100%;
+	background: #443d21;
+	opacity: 0.75;
+	z-index: 100;
+}
+#light-box img{
+	width: 100%;
+	height: auto;
+}
+#light-box{
+	position: absolute;
+	top: 23.43%;
+	left:28.083%;
+	z-index: 101;
+	width:620px;
+	height:auto;
+}
+.close{
+	position: absolute;
+	display: block;
+	top: -20px;
+	left:97%;
+	width: 40px;
+	height: 40px;
+	z-index: 1000;
+	background: url("img/close.png");
+	background-size: cover;
+	cursor: pointer;
+}
+
+#turn-back:checked ~ #square>#space-cube .cube3d {
+  -webkit-transform: rotateY(180deg); 
+} 
+#turn-left:checked ~ .scene .cube {
+  transform: rotateY(90deg); 
+} 
+#turn-right:checked ~ .scene .cube {
+  transform: rotateY(-90deg); 
+}
+#turn-top:checked ~ .scene .cube {
+  transform: rotateX(-90deg); 
+}  
+#turn-bottom:checked ~ .scene .cube {
+  transform: rotateX(90deg); 
+}
+
+
+
+/* ANIMATIONS */
+@-webkit-keyframes floater {
+	0%,100%{
+		bottom:0;
+	}
+	50%{
+		bottom:-10px;
+	}
+}
+@-moz-keyframes floater {
+	0%,100%{
+		bottom:0;
+	}
+	50%{
+		bottom:-10px;
+	}
+}
+@keyframes floater {
+	0%,100%{
+		bottom:0;
+	}
+	50%{
+		bottom:-10px;
+	}
+}
+@-webkit-keyframes appear{
+	0%{
+		top:-20px;
+		opacity: 0;
+	}
+	100%{
+		top:0;
+		opacity: 1;
+	}
+}
+@-moz-keyframes appear{
+	0%{
+		top:-20px;
+		opacity: 0;
+	}
+	100%{
+		top:0;
+		opacity: 1;
+	}
+}
+@keyframes appear{
+	0%{
+		top:-20px;
+		opacity: 0;
+	}
+	100%{
+		top:0;
+		opacity: 1;
+	}
+}
+@-webkit-keyframes appear-left{
+	0%{
+		right:-30px;
+		opacity: 0;
+	}
+	100%{
+		right:0;
+		opacity: 1;
+	}
+}
+@-moz-keyframes appear-left{
+	0%{
+		right:-30px;
+		opacity: 0;
+	}
+	100%{
+		right:0;
+		opacity: 1;
+	}
+}
+@keyframes appear-left{
+	0%{
+		right:-30px;
+		opacity: 0;
+	}
+	100%{
+		right:0;
+		opacity: 1;
+	}
+}
+@-webkit-keyframes appear-right{
+	0%{
+		left:-30px;
+		opacity: 0;
+	}
+	100%{
+		left:0;
+		opacity: 1;
+	}
+}
+@-moz-keyframes appear-right{
+	0%{
+		left:-30px;
+		opacity: 0;
+	}
+	100%{
+		left:0;
+		opacity: 1;
+	}
+}
+@keyframes appear-right{
+	0%{
+		left:-30px;
+		opacity: 0;
+	}
+	100%{
+		left:0;
+		opacity: 1;
+	}
+}
+.appear{
+	-webkit-animation:appear 1s 1 ease-in;
+	-moz-animation:appear 1s 1 ease-in;
+	animation:appear 1s 1 ease-in;
+	-o-animation:appear 1s 1 ease-in;
+	-webkit-animation-fill-mode: forwards;
+	-moz-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+}
+.appear-left{
+	-webkit-animation:appear-left 1s 1s 1 ease-in;
+	-moz-animation:appear-left 1s 1s ease-in;
+	-o-animation:appear-left 1s 1s 1 ease-in;
+	animation:appear-left 1s 1s ease-in;
+	-webkit-animation-fill-mode: forwards;
+	-moz-animation-fill-mode: forwards;
+	-o-animation-fill-mode: forwards;
+	 animation-fill-mode: forwards;
+}
+.appear-right{
+	-webkit-animation:appear-left 1s 2s 1 ease-in;
+	-moz-animation:appear-left 1s 2s ease-in;
+	-o-animation:appear-left 1s 2s 1 ease-in;
+	animation:appear-left 1s 2s ease-in;
+	-webkit-animation-fill-mode: forwards;
+	-moz-animation-fill-mode: forwards;
+	-o-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+}
+
+.floatit{
+	-webkit-animation:floater 3.5s infinite ease-in-out;
+	-moz-animation:floater 3.5s infinite ease-in-out;
+	-o-animation:floater 3.5s infinite ease-in-out;
+	animation:floater 3.5s infinite ease-in-out;
+}
+.floatit_fast{
+	-webkit-animation:floater 3s infinite ease-in-out;
+	-moz-animation:floater 3s infinite ease-in-out;
+	-o-animation:floater 3s infinite ease-in-out;
+	animation:floater 3s infinite ease-in-out;
+}

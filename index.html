@@ -1,0 +1,188 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<Title>IECSE</Title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="reset.css">
+	<link rel="stylesheet" type="text/css" href="home.css">
+	<link rel="stylesheet" type="text/css" href="cube.css">
+	<link rel="stylesheet" type="text/css" href="buttons.css">
+	<script src="jquery.js"></script>
+</head>
+<body>
+	<header>
+		<h1>IECSE</h1>
+		<div class="clearfix"></div>
+	</header>
+	<div id="container">
+		<nav>
+			<ul>
+			 <li>
+			 <div class="space">
+				<div class="cube" data-color="#ed145b #77072b #77072b #620624 #620624 #990a39">
+				<div class="face front-face"><p>About us</p></div>
+				<div class="face left-face"></div>
+				<div class="face right-face"></div>
+				<div class="face bottom-face"></div>
+				<div class="face top-face"></div>
+				<div class="face back-face"></div>
+				</div>
+			</div>
+			 </li>
+			 <li>
+			 	<div class="space">
+				<div class="cube" data-color="#2a9ee7 #0d6ba6 #0d6ba6 #0f75b5 #0f75b5 #0f75b5">
+				<div class="face front-face"><p>Studios</p></div>
+				<div class="face left-face"></div>
+				<div class="face right-face"></div>
+				<div class="face bottom-face"></div>
+				<div class="face top-face"></div>
+				<div class="face back-face"></div>
+				</div>
+				</div>
+			 </li>
+			 <li>
+			 	<div class="space">
+				<div class="cube" data-color="#d7e912 #b5af0c #b5af0c #d8d10e #d8d10e #d8d10e">
+				<div class="face front-face"><p>Blog</p></div>
+				<div class="face left-face"></div>
+				<div class="face right-face"></div>
+				<div class="face bottom-face"></div>
+				<div class="face top-face"></div>
+				<div class="face back-face"></div>
+				</div>
+				</div>
+			 </li>	
+			</ul>
+		</nav>
+		<div class="clearfix"></div>
+		<div id="menu" class="pull-left">
+			<img src="img/share.png" alt="share"/>
+		</div>
+		<div id="content">
+			<div class="braces pull-left ">
+				<p>{</p>
+			</div>
+			<div class="text pull-left ">
+				<p>IECSE</p>
+				<p class="purple smaller">manipal</p>
+			</div>
+			<div id="box" class="pull-left">
+			<div id="controls">
+				<input type="radio" checked id="turn-front" name="select-face"/>    
+				<input type="radio" id="turn-left" name="select-face"/>
+				<input type="radio" id="turn-right" name="select-face"/>
+				<input type="radio" id="turn-back" name="select-face"/>
+				<input type="radio" id="turn-top" name="select-face"/>
+				<input type="radio" id="turn-bottom" name="select-face"/>
+				
+			</div>
+				<div id="square">
+					<div id="space-cube">
+						<div class="cube3d">
+							<div class="face-cube face-front-cube"></div>
+							<div class="face-cube face-back-cube"></div>
+							<div class="face-cube face-right-cube"></div>
+							<div class="face-cube face-left-cube"></div>
+							<div class="face-cube face-top-cube"></div>
+							<div class="face-cube face-bottom-cube"></div> 
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="clear-fix"></div>
+		</div>
+		<div class="clear-fix"></div>
+	</div>
+	<footer>
+		<div class="boat floatit_fast" >
+			<img src="img/boat.png">
+		</div>
+		<div id="foot-back" class="floatit"></div>
+		<div id="foot-front" class="floatit_fast"></div>
+	</footer>
+	<div id="overlay">
+
+	</div>
+	<div id="light-box">
+			<img src="img/inst.jpg">
+			<div class="close"></div>
+		</div>
+		<div id="disp"><canvas id="comp" width="600"></canvas></div>
+		<video id="video" autoplay width="600" style="display:none"></video>
+		<canvas id="canvas" style="width:600px;display:none;" width="600"></canvas>
+		<script src="gesture.js"></script>
+	<script>
+		var addC=function(){
+			$(".braces").addClass("appear-left");
+			$(".text").addClass("appear");
+			$("#box").addClass("appear-right");
+		};
+		var initiat=function(callback){
+			callback();
+			palm();
+		}
+		function rotateLeft(){
+			$('.cube3d').removeClass("rotate-left-cube rotate-right-cube rotate-bottom-cube rotate-back-cube rotate-front-cube rotate-top-cube")
+			.toggleClass("rotate-left-cube");
+		}
+		function rotateRight(){
+			$('.cube3d').removeClass("rotate-left-cube rotate-right-cube rotate-bottom-cube rotate-back-cube rotate-front-cube rotate-top-cube")
+			.toggleClass('rotate-right-cube');
+		}
+		function rotateUp(){
+			$('.cube3d').removeClass("rotate-left-cube rotate-right-cube rotate-bottom-cube rotate-back-cube rotate-front-cube rotate-top-cube").toggleClass('rotate-top-cube');
+		}
+		function rotateDown(){
+			$('.cube3d').removeClass("rotate-left-cube rotate-right-cube rotate-bottom-cube rotate-back-cube rotate-front-cube rotate-top-cube").toggleClass('rotate-bottom-cube');
+		}
+		function rotateBack(){
+			$('.cube3d').removeClass("rotate-left-cube rotate-right-cube rotate-bottom-cube rotate-back-cube rotate-front-cube rotate-top-cube").toggleClass('rotate-back-cube');
+		}
+		function rotateFront(){
+			$('.cube3d').removeClass("rotate-left-cube rotate-right-cube rotate-bottom-cube rotate-back-cube rotate-front-cube").toggleClass('rotate-front-cube');
+		}
+		$("#turn-right").click(function(){
+			rotateRight();
+		});
+		$("#turn-left").click(function(){
+			rotateLeft();
+		});
+		$("#turn-front").click(function(){
+			rotateFront();
+		});
+		$("#turn-back").click(function(){
+			rotateBack();
+		});
+		$("#turn-top").click(function(){
+			rotateUp();
+		});
+		$("#turn-bottom").click(function(){
+			rotateDown();
+		});
+
+		$(document).ready(function(){
+			$(".front-face p").hover(function(){
+				$(this).parent().parent().addClass("popit");
+				var color=$(this).parent().parent().data('color').trim().split(" ");
+				var ele=$(this).parent().parent().find(".face");
+				//console.log(ele);
+				$.each(color,function(key,value){
+					$(ele[key]).css({"background":value});
+				});
+			});
+			$(".cube").mouseleave(function(){
+				$(this).removeClass("popit").find(".face").css({"background":"transparent"});
+
+			});
+			$(".close").click(function(){
+				$(this).parent().hide(1);
+				$("#overlay").fadeOut(500,function(){
+					initiat(addC);
+				});
+
+			});
+		});
+	</script>
+</body>
+</html>
